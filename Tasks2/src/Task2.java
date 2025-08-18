@@ -6,9 +6,9 @@ public class Task2 {
         Scanner scanner = new Scanner(System.in);
 
         //Asking user values for the triangle
-        System.out.println("Give the length of the triangle: ");
+        System.out.print("Give the length of the triangle: ");
         double length = Double.parseDouble(scanner.nextLine());
-        System.out.println("Give the height of the triangle: ");
+        System.out.print("Give the height of the triangle: ");
         double height = Double.parseDouble(scanner.nextLine());
         //Calculating area of the given triangle
         double area = (length * height) / 2.0;
