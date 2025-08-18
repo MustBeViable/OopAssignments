@@ -13,6 +13,8 @@ public class Task2 {
         int decimal = 0;
         for (int i = 0; i < number.length(); i++) {
             int power = number.length() - i - 1;
+
+            //Correcting the right value for bit in the string. Without this '1' equals to 49 and '0' to 48.
             int bit = number.charAt(i) - '0';
             decimal += (int) (bit * Math.pow(2, power));
         }
