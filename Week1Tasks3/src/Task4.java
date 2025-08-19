@@ -14,28 +14,35 @@ public class Task4 {
     public static void main(String[] args ) {
         Random rand = new Random();
         Scanner input = new Scanner(System.in);
+        int userScore;
+        do {
+            userScore = testQuestions(input, rand);
+            if (userScore >= 10) {
+                System.out.println("Great job! You passed the hardest test in the world!");
+            } else {
+                System.out.println("You failed. Try again!");
+            }
+        } while (userScore < 10);
+    }
+    public static int testQuestions(Scanner input ,Random rand) {
         int num1;
         int num2;
         int product;
-        boolean contin = true;
-        while (contin) {
-            num1 =  rand.nextInt(10);
-            num2 =  rand.nextInt(10);
+        int score = 0;
+        for (int i = 0; i < 10; i++) {
+            num1 =  rand.nextInt(10) + 1;
+            num2 =  rand.nextInt(10) + 1;
             product = num1 * num2;
-            System.out.printf("What is %d * %d = ? : ", num1, num2);
+            System.out.printf("%d. What is %d * %d = ? : ", i+1, num1, num2);
             int answer = input.nextInt();
             if (answer == product) {
                 System.out.println("Correct!");
+                score += 1;
             }
             else {
                 System.out.println("Wrong!");
-                System.out.printf("The correct answer is %d", answer);
+                System.out.printf("The correct answer is %d\n", answer);
             }
-            System.out.println("Do you want to continue? (y/n)");
-            char choice = input.next().charAt(0);
-            if (choice == 'n') {
-                contin = false;
-            }
-        }
+        } return score;
     }
 }
