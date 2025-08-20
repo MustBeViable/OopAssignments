@@ -1,4 +1,3 @@
-
 public class Car {
 
     private double speed;
@@ -6,12 +5,14 @@ public class Car {
     private String typeName;
     private double tankCapacity;
 
+
     public Car(String typeName) {
         speed = 0; gasolineLevel = 0;
         this.typeName = typeName;
     }
 
-    public Car(double speed, double gasolineTankCapacity) {
+    public Car(String typeName, double speed, double gasolineTankCapacity) {
+        this.typeName = typeName;
         this.speed = speed;
         this.tankCapacity = gasolineTankCapacity;
     }
