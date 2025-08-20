@@ -22,7 +22,9 @@ public class GroceryListManager {
             System.out.println("\nGrocery List:");
             int index = 1;
             for (Map.Entry<String, Double> grocery : this.groceryList.entrySet()) {
-                System.out.println(index + ". " + grocery);
+                String name = grocery.getKey();
+                double price = grocery.getValue();
+                System.out.printf("%d. %s        %.2f€\n", index, name, price);
                 index++;
             }
         }  else {
@@ -47,20 +49,15 @@ public class GroceryListManager {
         String[] groceries = {"Milk", "Bread", "Eggs", "Apples", "Potholders"};
 
         for (String grocery : groceries) {
-            double cost = Math.random() * (Math.random()*10);
+            double cost = Math.random() * (Math.random()*10 + 0.1);
             listManager.addItem(grocery, cost);
         }
 
-        System.out.printf("Total price of the list is: %.2f €", listManager.calculateTotalCost());
-/*
         listManager.displayList();
+        System.out.printf("Total price of the list is: %.2f €", listManager.calculateTotalCost());
 
         listManager.removeItem("Milk");
-
         listManager.removeItem("Candy");
-
         listManager.displayList();
-*/
-
     }
 }
