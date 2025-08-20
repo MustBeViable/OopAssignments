@@ -33,7 +33,7 @@ public class CoffeeMaker {
 
     public void setCoffeeVolume(int volume) {
         if (this.isOn) {
-            if (volume > 80) {
+            if (volume > 80 || volume < 10) {
                 volume = 10;
             }
             this.coffeeVolume = volume;
