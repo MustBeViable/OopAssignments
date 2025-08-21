@@ -43,7 +43,11 @@ public class GroceryListManager {
 
         listManager.displayList();
 
+        System.out.printf("\nIs milk in the list? %b \n", listManager.checkItem("Milk"));
+
         listManager.removeItem("Milk");
+
+        System.out.printf("\nIs milk in the list? %b \n", listManager.checkItem("Milk"));
 
         listManager.removeItem("Candy");
 
