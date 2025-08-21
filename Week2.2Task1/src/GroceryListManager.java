@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class GroceryListManager {
-    private ArrayList<String> groceryList = new ArrayList<>();
+    final private ArrayList<String> groceryList = new ArrayList<>();
 
     public void addItem(String item) {
         groceryList.add(item);
