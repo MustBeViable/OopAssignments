@@ -180,11 +180,5 @@ public class GroceryListManager {
 
         listManager.displayList();
 
-        listManager.displayList();
-        listManager.displayList();
-        listManager.displayList();
-        listManager.displayList();
-
-
     }
 }
