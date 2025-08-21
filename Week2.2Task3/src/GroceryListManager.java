@@ -3,7 +3,10 @@ import java.util.*;
 public class GroceryListManager {
     final private Map<String, Item> groceryList = new HashMap<>();
 
-    //Class to hold price and category for a item
+    //Class to hold price and category for an item
+
+    private record Item (double price, String category) {}
+ /*
     private static class Item {
         final double price;
         final String category;
@@ -13,7 +16,7 @@ public class GroceryListManager {
             this.category = category;
         }
     }
-
+*/
     public void addItem(String item, double price, String category) {
         groceryList.put(item, new Item(price, category));
     }
