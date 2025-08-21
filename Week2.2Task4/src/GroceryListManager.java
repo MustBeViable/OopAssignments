@@ -6,9 +6,9 @@ public class GroceryListManager {
     //Class to hold price and category for an item
 
     public static class Item {
-        final double price;
-        final String category;
-        int quantity;
+        final private double price;
+        final private String category;
+        private int quantity;
 
         private Item(double price, String category, int quantity) {
             this.price = price;
