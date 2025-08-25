@@ -1,4 +1,3 @@
-import javax.print.DocFlavor;
 import java.util.ArrayList;
 
 public class User {
