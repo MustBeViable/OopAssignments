@@ -28,7 +28,7 @@ public class Car {
     }
     protected void consumeFuel(double amount) {
         if (this.gasolineLevel <= 0 || amount <= 0) {
-            return;
+            this.gasolineLevel = 0;
         }
         this.gasolineLevel = Math.max(0, this.gasolineLevel - amount);
     }
