@@ -1,4 +1,4 @@
-public class Car implements Vehicle {
+public class Car extends AbstractVehicle {
 
     final private String type = "Car";
     final private String fuel = "Bio Diesel";
