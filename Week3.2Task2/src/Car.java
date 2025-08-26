@@ -1,0 +1,26 @@
+public class Car implements Vehicle {
+
+    final private String type = "Car";
+    final private String fuel = "Bio Diesel";
+    private String color;
+
+    public Car(String color) {
+        this.color = color;
+    }
+
+    @Override
+    public void start() {
+        System.out.println("Car is starting");
+    }
+
+    @Override
+    public void stop() {
+        System.out.println("Car is stopping.");
+    }
+
+    @Override
+    public String getInfo() {
+        return this.type +  " Information:\nType: " + this.type + "\nFuel: " + this.fuel + "\nColor: " + this.color;
+    }
+
+}
