@@ -1,4 +1,6 @@
-package library.model;
+package src.library.model;
+
+import library.model.Book;
 
 import java.util.ArrayList;
 import java.util.Objects;

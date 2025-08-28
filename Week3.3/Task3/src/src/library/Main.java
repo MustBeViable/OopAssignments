@@ -1,4 +1,4 @@
-package library;
+package src.library;
 
 import library.model.Book;
 import library.model.LibraryMember;
