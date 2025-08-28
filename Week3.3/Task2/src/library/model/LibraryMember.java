@@ -6,8 +6,8 @@ import java.util.Objects;
 public class LibraryMember {
     static private int memberIdIndex = 1000;
     private String name;
-    private int memberId;
-    private ArrayList<Book> borrowedBooks = new ArrayList<>();
+    private final int memberId;
+    private final ArrayList<Book> borrowedBooks = new ArrayList<>();
 
     public LibraryMember(String name) {
         this.name = name;

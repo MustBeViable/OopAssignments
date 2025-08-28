@@ -1,9 +1,9 @@
 package library.model;
 
 public class Book {
-    private String title;
-    private String author;
-    private int isbn;
+    private final String title;
+    private final String author;
+    private final int isbn;
 
     public Book (String title, String author, int isbn) {
         this.title = title;
