@@ -1,14 +1,20 @@
 package Task1;
 
 import java.io.*;
+import java.net.MalformedURLException;
+import java.net.*;
 
-public class NotThisOneAverageTempCalculatorFromLocalFiles {
-    private static final String FILENAME =
-            "C:\\Users\\Elias\\IdeaProjects\\OopAssignments\\Week3.4\\src\\Task1\\temploki.csv";
-
-
+public class AverageTempCalculator {
 
     public static void main(String[] args) {
+        URL temperatureUrl;
+        try {
+            temperatureUrl = new URL("https://users.metropolia.fi/~jarkkov/temploki.csv");
+        } catch (
+                MalformedURLException e) {
+            System.err.println(e);
+            return;
+        }
         FileReader reader;
         BufferedReader bufferedReader = null;
         String nextLine;
@@ -20,8 +26,12 @@ public class NotThisOneAverageTempCalculatorFromLocalFiles {
         int ulkoTaloIndex = -1;  //epärealistinen indexi ettei tulosta mitä sattuu
 
         try {
-            reader = new FileReader(FILENAME);
-            bufferedReader = new BufferedReader(reader);
+            InputStream stream = temperatureUrl.openStream();
+
+            InputStreamReader streamReader = new InputStreamReader(stream);
+
+
+            bufferedReader = new BufferedReader(streamReader);
 
             do {
                 nextLine = bufferedReader.readLine();
