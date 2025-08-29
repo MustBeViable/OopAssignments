@@ -15,7 +15,6 @@ public class AverageTempCalculator {
             System.err.println(e);
             return;
         }
-        FileReader reader;
         BufferedReader bufferedReader = null;
         String nextLine;
         String[] columnNames = new String[0];
@@ -46,7 +45,7 @@ public class AverageTempCalculator {
                             }
                         }
                     }
-                    System.out.println("löydös: " + columnNames[ulkoTaloIndex]);
+                    System.out.print("löydös: " + columnNames[ulkoTaloIndex] + " ");
                     try {
                         temperatureSum += Double.parseDouble(columnNames[ulkoTaloIndex].trim().replace(',', '.'));
                         temperatureCounter++;
