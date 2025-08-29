@@ -51,7 +51,7 @@ public class AverageTempCalculator {
                         temperatureSum += Double.parseDouble(columnNames[ulkoTaloIndex].trim().replace(',', '.'));
                         temperatureCounter++;
                     } catch (Exception e) {
-                        System.out.println(e);
+                        System.err.println(e);
                     }
                     header = true;
                 }
@@ -69,7 +69,7 @@ public class AverageTempCalculator {
 
 
         } catch (IOException e) {
-            System.out.println(e);
+            System.err.println(e);
         }
     }
 }
