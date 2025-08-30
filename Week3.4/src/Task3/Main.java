@@ -6,8 +6,8 @@ import java.util.List;
 
 public class Main {
     private final static String FILENAME = "enrollments.ser";
-    public static void main(String[] args) {
 
+    public static void main(String[] args) {
 
 
         Student student1 = new Student("Elias", 24);
@@ -18,15 +18,14 @@ public class Main {
         Course course2 = new Course("1235", "oop2", "Juhatti");
         Course course3 = new Course("1236", "oop3", "Juhatti");
 
-        Enrollment enrollment1 = new Enrollment(student1,course1,"29.08.2025");
-        Enrollment enrollment2 = new Enrollment(student2,course2,"29.08.2025");
-        Enrollment enrollment3 = new Enrollment(student3,course3,"29.08.2025");
+        Enrollment enrollment1 = new Enrollment(student1, course1, "29.08.2025");
+        Enrollment enrollment2 = new Enrollment(student2, course2, "29.08.2025");
+        Enrollment enrollment3 = new Enrollment(student3, course3, "29.08.2025");
 
         File file = new File(FILENAME);
         if (file.exists() && file.isFile()) {
-            try {
-                FileInputStream inputStream = new FileInputStream(FILENAME);
-                ObjectInputStream obj = new ObjectInputStream(inputStream);
+            try (FileInputStream inputStream = new FileInputStream(FILENAME);
+                 ObjectInputStream obj = new ObjectInputStream(inputStream);) {
                 List<Enrollment> enrollments = (List<Enrollment>) obj.readObject();
                 //enrollment1 = (Enrollment) obj.readObject();
                 //enrollment2 = (Enrollment) obj.readObject();
@@ -44,9 +43,9 @@ public class Main {
             enrollments.add(enrollment1);
             enrollments.add(enrollment2);
             enrollments.add(enrollment3);
-            try {
-                FileOutputStream outputStream = new FileOutputStream(FILENAME);
-                ObjectOutputStream obj = new ObjectOutputStream(outputStream);
+            try (
+                    FileOutputStream outputStream = new FileOutputStream(FILENAME);
+                    ObjectOutputStream obj = new ObjectOutputStream(outputStream);) {
                 obj.writeObject(enrollments);
 
             } catch (Exception e) {
