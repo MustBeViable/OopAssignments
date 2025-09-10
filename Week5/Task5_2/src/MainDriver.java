@@ -34,6 +34,8 @@ public class MainDriver {
 
         ArrayList<Integer> nums = numberListMaker(num);
 
+        NumberCalculator.setNumbers(nums);
+
         System.out.println("Size of number list: " + nums.size());
 
 
@@ -41,13 +43,13 @@ public class MainDriver {
         int startIndex = 0;
         if (nums.size()%processors!=0) {
             for (int i = 0; i < (processors-1); i++) {
-                threads.add(new NumberCalculator(nums, startIndex, (nums.size()/processors)));
+                threads.add(new NumberCalculator(startIndex, (startIndex +(nums.size()/processors))));
                 startIndex += nums.size()/processors;
             }
-            threads.add(new NumberCalculator(nums, startIndex, nums.size()));
+            threads.add(new NumberCalculator(startIndex, (nums.size())-1));
         } else {
             for (int i = 0; i < processors; i++) {
-                threads.add(new NumberCalculator(nums, startIndex, (nums.size()/processors)));
+                threads.add(new NumberCalculator(startIndex, (startIndex + (nums.size()/processors))));
                 startIndex += nums.size()/processors;
             }
         }
