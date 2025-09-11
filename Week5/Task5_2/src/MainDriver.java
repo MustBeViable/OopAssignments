@@ -9,7 +9,13 @@ public class MainDriver {
         ArrayList<Integer> numbers = new ArrayList<>();
         Random random = new Random();
         for (int i = 0; i < numberCount; i++) {
-            numbers.add(random.nextInt(Integer.MAX_VALUE));
+            //purkka korjaus OutOfMemoryErrorin korjaukseen.
+            try {
+                numbers.add(random.nextInt(Integer.MAX_VALUE));
+            } catch (OutOfMemoryError e) {
+                System.out.printf("Running out of memory. Only %d numbers were added of your %d.\n", i, numberCount);
+                break;
+            }
         }
         return numbers;
     }
